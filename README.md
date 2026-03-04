@@ -1,3 +1,13 @@
+
+
+
+
+My personal edits for the saber app to make it do what I want.
+
+
+
+
+================================================================
 # <img src="https://github.com/saber-notes/saber/raw/main/assets/icon/icon.png" width="30" height="30" alt="Logo"> Saber
 
 [<img src='https://github.com/saber-notes/saber/blob/main/assets_raw/badges/google-play-badge.svg'
