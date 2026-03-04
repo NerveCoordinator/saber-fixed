@@ -3,7 +3,7 @@ import 'dart:collection';
 import 'dart:math';
 import 'dart:ui';
 
-import 'package:saber/main.dart';
+import 'package:saber/components/theming/dynamic_material_app.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
