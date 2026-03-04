@@ -1699,6 +1699,7 @@ class EditorState extends State<Editor> {
                 child: const Icon(Icons.fullscreen_exit),
               )
             : null,
+        floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
       ),
     );
   }
