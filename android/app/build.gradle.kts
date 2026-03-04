@@ -19,7 +19,7 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    namespace = "com.adilhanney.saber_fixed"
+    namespace = "com.adilhanney.saber"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = "28.2.13676358"
 
