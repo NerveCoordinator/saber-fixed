@@ -3,6 +3,7 @@ import 'dart:collection';
 import 'dart:math';
 import 'dart:ui';
 
+import 'package:saber/main.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -521,29 +522,30 @@ class CanvasGestureDetectorState extends State<CanvasGestureDetector> {
             ),
           ),
         ),
-        Positioned.fill(
-          child: CanvasHud(
-            transformationController: widget._transformationController,
-            zoomLock: zoomLockedValue != null,
-            setZoomLock: (bool zoomLock) => setState(() {
-              zoomLockedValue = zoomLock
-                  ? widget._transformationController.value.approxScale
-                  : null;
-              stows.lastZoomLock.value = zoomLock;
-            }),
-            resetZoom: zoomLockedValue != null ? null : resetZoom,
-            singleFingerPanLock: singleFingerPanLock,
-            setSingleFingerPanLock: (bool singleFingerPanLock) => setState(() {
-              this.singleFingerPanLock = singleFingerPanLock;
-              stows.lastSingleFingerPanLock.value = singleFingerPanLock;
-            }),
-            axisAlignedPanLock: axisAlignedPanLock,
-            setAxisAlignedPanLock: (bool axisAlignedPanLock) => setState(() {
-              this.axisAlignedPanLock = axisAlignedPanLock;
-              stows.lastAxisAlignedPanLock.value = axisAlignedPanLock;
-            }),
+        if (!DynamicMaterialApp.isFullscreen)
+          Positioned.fill(
+            child: CanvasHud(
+              transformationController: widget._transformationController,
+              zoomLock: zoomLockedValue != null,
+              setZoomLock: (bool zoomLock) => setState(() {
+                zoomLockedValue = zoomLock
+                    ? widget._transformationController.value.approxScale
+                    : null;
+                stows.lastZoomLock.value = zoomLock;
+              }),
+              resetZoom: zoomLockedValue != null ? null : resetZoom,
+              singleFingerPanLock: singleFingerPanLock,
+              setSingleFingerPanLock: (bool singleFingerPanLock) => setState(() {
+                this.singleFingerPanLock = singleFingerPanLock;
+                stows.lastSingleFingerPanLock.value = singleFingerPanLock;
+              }),
+              axisAlignedPanLock: axisAlignedPanLock,
+              setAxisAlignedPanLock: (bool axisAlignedPanLock) => setState(() {
+                this.axisAlignedPanLock = axisAlignedPanLock;
+                stows.lastAxisAlignedPanLock.value = axisAlignedPanLock;
+              }),
+            ),
           ),
-        ),
       ],
     );
   }
