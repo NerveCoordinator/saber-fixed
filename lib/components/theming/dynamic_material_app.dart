@@ -41,7 +41,7 @@ class DynamicMaterialApp extends StatefulWidget {
       windowManager.setFullScreen(value);
     } else {
       SystemChrome.setEnabledSystemUIMode(
-        value ? SystemUiMode.immersive : SystemUiMode.edgeToEdge,
+        value ? SystemUiMode.immersiveSticky : SystemUiMode.edgeToEdge,
       );
     }
   }
